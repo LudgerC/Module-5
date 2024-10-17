@@ -4,7 +4,7 @@ const userInput = readline.createInterface({ input, output });
 
 
 let getal = parseFloat(await userInput.question("Geef een getal in: "));
-let maal;
+let maal = 0;
 
 do
 {
@@ -18,21 +18,34 @@ do
 }while(getal < 1);
 
 
-//factorial(getal);
 for(let i = 1; getal >= i; i++)
 { 
-    process.stdout.write(i + " X "); 
+    if(i == 1)
+    {
+        process.stdout.write("" + i);
+    }
+    else
+    {
+        process.stdout.write(" X " + i);
+    }
     
 }
 
+process.stdout.write(" = ");
+
+let resultaat = factorial(getal);
+
+process.stdout.write("" + resultaat);
 
 
-
-
-/*function factorial(getal)
+function factorial(getal)
 {
-    for(let i = 1; getal < i; i++)
-    { 
-      process.stdout.write(i + " X "));
+    let resultaat = 1;
+
+    for(let i = 1; i <= getal; i++)
+    {
+        resultaat *= i;
     }
-}*/
+
+    return resultaat;
+}
