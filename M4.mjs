@@ -5,11 +5,27 @@ const userInput = readline.createInterface({ input, output });
 let getal = parseFloat(await userInput.question("Geef een getal in: "));
 let som = 0;
 
-for(let i = 1; getal >= i; i++)
+delers(getal);
+
+function delers(getal)
 {
-    if(getal % i == 0)
+for(let i = 1; (getal - 1) >= i; i++)
     {
+        if(getal % i == 0)
+        {
+            if(i == 1)
+            {
+                process.stdout.write("" + i);
+            }
+            else
+            {
+                process.stdout.write(" + " + i);
+            }
+          som += i;  
+        }
+        
     
     }
-console.log(som);
+    process.stdout.write(" = " + som);
+    
 }
