@@ -4,7 +4,7 @@ const userInput = readline.createInterface({ input, output });
 
 
 let getal = parseFloat(await userInput.question("Geef een getal in: "));
-let maal = 0;
+
 
 do
 {
